@@ -16,7 +16,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-image: url(./background.jpg)
+  background-image: url(./background.jpg);
   font-family: "Nunito", sans-serif;
 }
 
@@ -27,6 +27,7 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 30px;
+  background-color: #2f2f2f;
   box-shadow: 25px 20px 75px rgba(0, 0, 0, 0.25),
     10px 10px 70px rgba(0, 0, 0, 0.5), inset 5px 5px 15px rgba(0, 0, 0, 0.5),
     inset -5px -5px 15px rgba(0, 0, 0, 0.5);
