@@ -17,13 +17,27 @@ export class Calculator {
 }
 
 export class Display {
-  constructor(operation, result) {
-    this.operation = operation;
-    this.result = result;
-    this.calculator = new Calculator();
+  constructor(displayBeforeValue, displayActualValue) {
+    // Elements to modify
+    this.displayActualValue = displayActualValue;
+    this.displayBeforeValue = displayBeforeValue;
+
+    // Numbers to save
     this.actualValue = "";
     this.beforeValue = "";
+
+    this.calculator = new Calculator();
+
+    // Operation to save
     this.operationType = undefined;
+
+    // Operations types
+    this.symbols = {
+      plus: "+",
+      substract: "-",
+      split: "/",
+      multiply: "*",
+    };
   }
 
   addNumber(number) {
@@ -33,8 +47,10 @@ export class Display {
   }
 
   printValue() {
-    this.operation.value = this.actualValue;
-    this.result.value = this.beforeValue;
+    this.displayActualValue.value = this.actualValue;
+    this.displayBeforeValue.value = `${this.beforeValue} ${
+      this.symbols[this.operationType] || ""
+    }`;
   }
 
   clearOne() {
@@ -46,6 +62,26 @@ export class Display {
     this.actualValue = "";
     this.beforeValue = "";
     this.operationType = undefined;
+    this.printValue();
+  }
+
+  calculate() {
+    // Transform strings to Numbers
+    const beforeValue = parseFloat(this.beforeValue);
+    const actualValue = parseFloat(this.actualValue);
+
+    if (isNaN(actualValue) || isNaN(beforeValue)) return;
+    this.actualValue = this.calculator[this.operationType](
+      beforeValue,
+      actualValue
+    );
+  }
+
+  computed(type) {
+    this.operationType !== "equal" && this.calculate();
+    this.operationType = type;
+    this.beforeValue = this.actualValue || this.beforeValue;
+    this.actualValue = "";
     this.printValue();
   }
 }
