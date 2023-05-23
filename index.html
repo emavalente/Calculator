@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div action="" class="calc">
+        <div class="calc__display">
+          <input
+            class="display__inner display__inner--operation"
+            type="text"
+            name="operation"
+            id="operation"
+          />
+          <input
+            class="display__inner display__inner--result"
+            type="text"
+            name="result"
+            id="result"
+            placeholder="0"
+          />
+        </div>
+
+        <button class="calc__btn calc__btn--clear">
+          <i>C</i>
+        </button>
+        <button class="calc__btn calc__btn--back">
+          <i>&larr;</i>
+        </button>
+        <button class="calc__btn operator"><i>/</i></button>
+        <button class="calc__btn operator"><i>*</i></button>
+
+        <button class="calc__btn number"><i>7</i></button>
+        <button class="calc__btn number"><i>8</i></button>
+        <button class="calc__btn number"><i>9</i></button>
+
+        <button class="calc__btn operator"><i>-</i></button>
+
+        <button class="calc__btn number"><i>4</i></button>
+        <button class="calc__btn number"><i>5</i></button>
+        <button class="calc__btn number"><i>6</i></button>
+
+        <button class="calc__btn calc__btn--plus operator"><i>+</i></button>
+
+        <button class="calc__btn number"><i>3</i></button
+        ><button class="calc__btn number"><i>2</i></button>
+        <button class="calc__btn number"><i>1</i></button>
+
+        <button class="calc__btn number"><i>0</i></button>
+        <button class="calc__btn number"><i>00</i></button>
+        <button class="calc__btn number"><i>.</i></button>
+
+        <button class="calc__btn calc__btn--equal operator"><i>=</i></button>
+      </div>
+    </div>
+
+    <h2>Emanuel Valente</h2>
+    <h3>Frontend Developer</h3>
+    <script src="./main.js" type="module"></script>
+    <script src="./classes.js" type="module"></script>
+  </body>
+</html>
