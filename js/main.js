@@ -9,7 +9,7 @@ const buttonsOperator = document.querySelectorAll(".operator");
 const btnClear = document.querySelector(".calc__btn--clear");
 const btnBack = document.querySelector(".calc__btn--back");
 
-const display = new Display(displayActualValue, displayBeforeValue);
+const display = new Display(displayBeforeValue, displayActualValue);
 
 buttonsNumber.forEach((button) => {
   button.addEventListener("click", () => {

@@ -63,15 +63,15 @@ body {
   outline: none;
   text-align: right;
   font-family: "Clock";
-  color: rgba(0, 0, 0, 0.5);
+  color: #3d423e;
   background-color: #a7af7c;
 }
 
-.display__inner--operation {
+.display__inner--before {
   font-size: 2rem;
 }
 
-.display__inner--result {
+.display__inner--actual {
   font-size: 3rem;
 }
 
@@ -126,17 +126,6 @@ body {
   border-left: 1px solid #fff4;
   border-bottom: 1px solid #fff4;
 }
-
-/* .calc__btn--back {
-  background: #6200ff;
-}
-
-.calc__btn--back::before {
-  background: linear-gradient(90deg, #6200ff, #ffffff56);
-  border-top: 1px solid #fff9;
-  border-left: 1px solid #fff4;
-  border-bottom: 1px solid #fff4;
-} */
 
 .calc__btn--plus {
   grid-row: span 2;

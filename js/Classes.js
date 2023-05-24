@@ -19,14 +19,14 @@ export class Calculator {
 export class Display {
   constructor(displayBeforeValue, displayActualValue) {
     // Elements to modify
-    this.displayActualValue = displayActualValue;
     this.displayBeforeValue = displayBeforeValue;
-
-    // Numbers to save
-    this.actualValue = "";
-    this.beforeValue = "";
+    this.displayActualValue = displayActualValue;
 
     this.calculator = new Calculator();
+
+    // Numbers to save
+    this.beforeValue = "";
+    this.actualValue = "";
 
     // Operation to save
     this.operationType = undefined;
@@ -59,16 +59,19 @@ export class Display {
   }
 
   clearAll() {
-    this.actualValue = "";
     this.beforeValue = "";
+    this.actualValue = "";
     this.operationType = undefined;
     this.printValue();
   }
 
   calculate() {
     // Transform strings to Numbers
-    const beforeValue = parseFloat(this.beforeValue);
-    const actualValue = parseFloat(this.actualValue);
+    const beforeValue = parseInt(this.beforeValue);
+    const actualValue = parseInt(this.actualValue);
+
+    console.log(actualValue);
+    console.log(beforeValue);
 
     if (isNaN(actualValue) || isNaN(beforeValue)) return;
     this.actualValue = this.calculator[this.operationType](
@@ -80,7 +83,9 @@ export class Display {
   computed(type) {
     this.operationType !== "equal" && this.calculate();
     this.operationType = type;
-    this.beforeValue = this.actualValue || this.beforeValue;
+    console.log(this.actualValue);
+    this.beforeValue =
+      this.actualValue.toString() || this.beforeValue.toString();
     this.actualValue = "";
     this.printValue();
   }
